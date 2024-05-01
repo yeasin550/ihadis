@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-green {
+  background-color: #2B9E76;
+  
+}
+.text-green {
+  color: #1FA45B;
+  font-family: serif;
+  font-size: bold;
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar track */
+}
