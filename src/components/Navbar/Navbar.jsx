@@ -112,7 +112,7 @@ const Navbar = () => {
                             aria-label="close sidebar"
                             className="drawer-overlay"
                         ></label>
-                        <ul className="menu rounded-l-3xl p-4 w-80 min-h-full bg-white text-base-content ">
+                        <ul className="menu p-4 w-80 min-h-full bg-white text-base-content ">
                             <div className="text-center text-2xl pt-4">Settings</div>
 
                             <div className="mt-2 rounded-lg border-4 border-t-0 border-l border-r border-b text-2xl">
