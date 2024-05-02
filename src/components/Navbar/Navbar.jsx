@@ -5,31 +5,12 @@ import { IoIosCheckbox, IoMdCheckboxOutline } from "react-icons/io";
 import setting from "../../../public/image/setting.png";
 import profile from "../../../public/image/profile.png";
 import homeLogo from "../../../public/image/home-logo.png";
-import { useState } from "react";
-import { IoLanguageOutline } from "react-icons/io5";
-import { TbMessageLanguage } from "react-icons/tb";
-import { PiGridFourFill } from "react-icons/pi";
-const Navbar = () => {
-    // State to manage visibility of language options
-    const [showLanguageOptions, setShowLanguageOptions] = useState(false);
-    const [showGeneralOptions, setShowGeneralOptions] = useState(false);
-    const [showFontOptions, setShowFontOptions] = useState(false);
-    const [showAppearanceOptions, setShowAppearanceOptions] = useState(false);
 
-    const toggleLanguageOptions = () => {
-        setShowLanguageOptions(!showLanguageOptions);
-    };
-    const toggleGeneralOptions = () => {
-        setShowGeneralOptions(!showGeneralOptions);
-    };
-    const toggleFontOptions = () => {
-        setShowFontOptions(!showFontOptions);
-    };
-    const toggleAppearanceOptions = () => {
-        setShowAppearanceOptions(!showAppearanceOptions);
-    };
+const Navbar = () => {
+
+
     return (
-        <div className="mx-4 my-3 flex items-center justify-between sticky top-0 left-0 z-50">
+        <div className="mx-4 my-3 flex items-center justify-between sticky top-0 left-0 z-50 bg-white">
             <div className="flex items-center gap-5">
                 <img className="w-11" src={homeLogo} alt="" />
                 <div><h1 className="text-xl font-bold ">
@@ -132,138 +113,56 @@ const Navbar = () => {
                             className="drawer-overlay"
                         ></label>
                         <ul className="menu rounded-l-3xl p-4 w-80 min-h-full bg-white text-base-content ">
-                            <div className="text-center text-2xl py-8">Settings</div>
+                            <div className="text-center text-2xl pt-4">Settings</div>
 
                             <div className="mt-2 rounded-lg border-4 border-t-0 border-l border-r border-b text-2xl">
-                                <div
-                                    className="flex items-center gap-5 justify-left pl-3 w-full bg-slate-100 py-3 cursor-pointer rounded-r-md border-l-4 border-l-green-600 text-lg"
-                                    onClick={toggleLanguageOptions}
-                                >
-                                    <IoLanguageOutline className="text-2xl rounded-full" />
-                                    Language Settings
+                                <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
+                                    <label for="cars" className="font-semibold">Select Arabic font
+                                    </label> <br />
+                                    <select className="w-full border border-green-600 py-1 rounded-md px-2" id="cars" name="cars">
+                                        <option value="uthmani">KFGQ</option>
+                                        <option value="quran" >Me Quran</option>
+                                        <option value="mushaf" >Al Mushaf</option>
+                                        <option value="amiri" >Amiri</option>
+                                        <option value="arial" >Arial</option>
+                                    </select>
                                 </div>
-                                {showLanguageOptions && (
-                                    <div className="text-center w-full flex gap-3 justify-center py-7 cursor-pointer rounded-md text-sm">
-                                        <button className="bg-green-500 px-10 py-2 rounded-md text-white">
-                                            English
-                                        </button>
-                                        <button className=" border border-gray-500 px-10 py-2 rounded-md">
-                                            বাংলা
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="mt-2 rounded-lg border-4 border-t-0 border-l border-r border-b text-2xl">
-                                <div
-                                    className="flex items-center gap-5 justify-left pl-3 w-full bg-slate-100 py-3 cursor-pointer rounded-r-md border-l-4 border-l-green-600 text-lg"
-                                    onClick={toggleGeneralOptions}
-                                >
-                                    <TbMessageLanguage className="text-2xl rounded-full" />
-                                    General Settings
-                                </div>
-                                {showGeneralOptions && (
-                                    <div>
-                                        <div className="flex items-center justify-between w-full gap-3 cursor-pointer rounded-md text-[14px] px-8">
-                                            <h1 className="py-2 rounded-md">Show Arabic</h1>
-                                            <input
-                                                type="checkbox"
-                                                id="vehicle1"
-                                                name="vehicle1"
-                                                value="Bike"
-                                            ></input>
-                                        </div>
-                                        <div className="flex items-center justify-between w-full gap-3 cursor-pointer rounded-md text-[14px] px-8">
-                                            <h1 className="py-2 rounded-md">Show Translation</h1>
-                                            <input
-                                                type="checkbox"
-                                                id="vehicle1"
-                                                name="vehicle1"
-                                                value="Bike"
-                                            ></input>
-                                        </div>
-                                        <div className="flex items-center justify-between w-full gap-3 cursor-pointer rounded-md text-[14px] px-8">
-                                            <h1 className="py-2 rounded-md">Show Transliteration</h1>
-                                            <input
-                                                type="checkbox"
-                                                id="vehicle1"
-                                                name="vehicle1"
-                                                value="Bike"
-                                            ></input>
-                                        </div>
-                                        <div className="flex items-center justify-between w-full gap-3 cursor-pointer rounded-md text-[14px] px-8">
-                                            <h1 className="py-2 rounded-md">Show Refference</h1>
-                                            <input
-                                                type="checkbox"
-                                                id="vehicle1"
-                                                name="vehicle1"
-                                                value="Bike"
-                                            ></input>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
 
-                            <div className="mt-2 rounded-lg border-4 border-t-0 border-l border-r border-b text-2xl">
-                                <div
-                                    className="flex items-center gap-5 justify-left pl-3 w-full bg-slate-100 py-3 cursor-pointer rounded-r-md border-l-4 border-l-green-600 text-lg"
-                                    onClick={toggleFontOptions}
-                                >
-                                    <PiGridFourFill className="text-2xl rounded-full" />
-                                    Font Settings
-                                </div>
-                                {showFontOptions && (
-                                    <div>
-                                        <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
-                                            <h1 className="py-2 rounded-md">Translation Font Size</h1>
-                                            <input type="range" className="w-full"></input>
-                                        </div>
-                                        <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
-                                            <label for="cars">Select Arabic Script</label> <br />
-                                            <select className="w-full border border-green-600 py-1 rounded-md px-2" id="cars" name="cars">
-                                                <option value="uthmani">Uthmani</option>
-                                                <option value="indopak" >Indopak</option>
-                                            </select>
-                                        </div>
-                                        <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
-                                            <label for="cars">Arabic Font</label> <br />
-                                            <select className="w-full border border-green-600 py-1 rounded-md px-2" id="cars" name="cars">
-                                                <option value="kfgq">GFGQ</option>
-                                                <option value="quran" >Me Quran</option>
-                                                <option value="mushaf" >Al Mushaf</option>
-                                                <option value="amiri">Amiri Quran</option>
-                                            </select>
-                                        </div>
-                                        <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
-                                            <h1 className="py-2 rounded-md">Arabic Font Size</h1>
-                                            <input type="range" className="w-full"></input>
-                                        </div>
+                                <div>
+                                    <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
+                                        <h1 className="py-2 rounded-md font-semibold">Arabic font size
+                                        </h1>
+                                        <input type="range" className="w-full"></input>
                                     </div>
-                                )}
+                                    <div className="w-full gap-3 cursor-pointer rounded-md text-[16px] px-4">
+                                        <h1 className="py-2 rounded-md font-semibold">Translation font size
+                                        </h1>
+                                        <input type="range" className="w-full"></input>
+                                    </div>
+                                </div>
                             </div>
-
                             <div className="mt-2 rounded-lg border-4 border-t-0 border-l border-r border-b text-2xl">
-                                <div
-                                    className="flex items-center gap-5 justify-left pl-3 w-full bg-slate-100 py-3 cursor-pointer rounded-r-md border-l-4 border-l-green-600 text-lg"
-                                    onClick={toggleAppearanceOptions}
-                                >
-                                    <PiGridFourFill className="text-2xl rounded-full" />
-                                    Appearance Settings
+                                <div className="flex items-center justify-between w-full gap-3 cursor-pointer rounded-md text-[18px] px-8">
+                                    <h1 className="py-2 rounded-md font-semibold">Night Mode</h1>
+                                    <input
+                                        type="checkbox"
+                                        id="vehicle1"
+                                        name="vehicle1"
+                                        value="Bike"
+                                    ></input>
                                 </div>
-                                {showAppearanceOptions && (
-                                    <div className="flex items-center justify-between w-full gap-3 py-7 cursor-pointer rounded-md text-[18px] px-8">
-                                        <h1 className="py-2 rounded-md">Night Mode</h1>
-                                        <input
-                                            type="checkbox"
-                                            id="vehicle1"
-                                            name="vehicle1"
-                                            value="Bike"
-                                        ></input>
-                                    </div>
-                                )}
+                            </div>
+                            <div className="bg-[#34AB82] p-5 rounded-md text-center space-y-3 mt-2">
+                                <h1 className="text-2xl text-white font-bold">You also participate in Sadakay Zaria
+                                </h1>
+                                <p className="text-lg text-white text-justify">Your donation, however small, will help spread the message of Islam and hadith. Donate to our project to be part of our work and help in this important work. Inshallah it will be accepted by Allah as a charity.</p>
+                                <button className="bg-white py-2 px-4 rounded-md text-xl">Support</button>
                             </div>
                         </ul>
                     </div>
+                    
                 </div>
+               
             </div>
 
         </div>

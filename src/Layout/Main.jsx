@@ -5,8 +5,11 @@ import Navbar from "../components/Navbar/Navbar";
 const Main = () => {
     return (
         <div>
-            <Navbar/>
+            <Navbar />
+            {/* <div className="h-[85vh]"> */}
+
             <Outlet/>
+            {/* </div> */}
             
         </div>
     );

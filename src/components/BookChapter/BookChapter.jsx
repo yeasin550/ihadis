@@ -91,10 +91,9 @@ const BookChapter = () => {
             <section className="md:flex md:gap-6 h-96 md:ml-32 ml-0">
                 {/* category section */}
                 <div className="mt-5 md:w-[550px] h-[85vh] overflow-y-auto bg-white rounded-t-xl">
-                    <div className="sticky custom-green md:w-[550px] w-full top-0 z-50 h-16 flex text-xl text-white justify-around items-center cursor-pointer">
+                    <div className="sticky custom-green top-0 z-50 h-16 flex text-xl text-white justify-around items-center cursor-pointer">
                         Chapter
                     </div>
-                    {/* new tab div */}
 
                     <div className="p-3 sticky top-14 z-50 bg-white">
                         <label className="input input-bordered flex items-center gap-2 sticky top-0 z-50">
@@ -139,7 +138,7 @@ const BookChapter = () => {
                 </div>
 
                 
-                <div className="w-full mt-5 h-[85vh] overflow-y-auto mr-2 ">
+                <div className="w-full mt-5 h-[90vh] overflow-y-auto mr-2 ">
                     <ContentCard selectedCategory={selectedCategory} />
                 </div>
 
